@@ -68,8 +68,7 @@ pip install --upgrade sas_ci360_airflow_provider-*-py3-none-any.whl
 Use pip to install diectly from the GitHub release:
 
 ```bash
-pip install --upgrade \
-  https://github.com/sassoftware/ci360-airflow-provider/releases/latest/download/sas_ci360_airflow_provider-*-py3-none-any.whl
+pip install --upgrade https://github.com/sassoftware/ci360-airflow-provider/releases/latest/download/sas_ci360_airflow_provider-1.0.0-py3-none-any.whl
 ```
 
 ## Connections

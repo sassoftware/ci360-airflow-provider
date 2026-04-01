@@ -1,0 +1,37 @@
+#Copyright © 2026, SAS Institute Inc., Cary, NC, USA.  All Rights Reserved.
+#SPDX-License-Identifier: Apache-2.0
+
+[build-system]
+requires = ['hatchling>=1.24.0', 'hatch-vcs>=0.4']
+build-backend = 'hatchling.build'
+
+[tool.hatch.version]
+source = 'vcs'
+
+[project]
+name = 'sas-ci360-airflow-provider'
+dynamic = ['version']
+description = 'Apache Airflow provider for SAS CI 360 tasks and segment maps'
+readme = 'README.md'
+requires-python = '>=3.9'
+authors = [
+  { name = 'Example Team', email = 'team@example.com' }
+]
+dependencies = [
+  'packaging>=23.0',
+  'apache-airflow>=2.7,<4.0',
+  'PyJWT>=2.8',
+  'requests>=2.28'
+]
+
+[project.urls]
+Homepage = 'https://github.com/sassoftware/ci360-airflow-provider'
+
+[project.entry-points.'apache_airflow_provider']
+provider_info = 'airflow.providers.sas_ci360:get_provider_info'
+
+[tool.hatch.build.targets.wheel]
+packages = ['airflow.providers.sas_ci360']
+
+[tool.hatch.build.targets.wheel.force-include]
+'src/airflow/providers/sas_ci360' = 'airflow/providers/sas_ci360'
